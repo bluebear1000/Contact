@@ -38,6 +38,9 @@ public class Book {
 		return this.numAuthors;
 	}
 	
+	public int compareTo(Book another) {
+		return this.title.compareTo(another.getTitle());
+	}
 	public boolean equals(Object obj) {
 		return this.title.equals(((Book) obj).getTitle());
 	}
