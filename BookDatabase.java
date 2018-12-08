@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BookDatabase {
-	private Map<String, Book> Data;
+	private Map<String, Book> Data =new HashMap<>();
 
 	public Book searchByTitle(String title) {
 		return this.Data.get(title);
