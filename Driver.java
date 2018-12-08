@@ -25,13 +25,14 @@ public class Driver {
 		ArrayList<String> authors6 = new ArrayList<String>();
 		authors6.add("J. Kennedy");
 
-		Book book1 = new Book("Data Structures With Java", "Seth Rogen", 2002, authors1.add(), authors1.size());
-		Book book2 = new Book("American History", "McGraw Hill", 2005, authors2.add(), authors2.size());
-		Book book3 = new Book("Vampire Slayer", "Seth Rogen", 2013, authors3.add(), authors3.size());
-		Book book4 = new Book("Ford", "Penguin", 1999, authors4.add(), authors4.size());
-		Book book5 = new Book("Stick", "Trolli and Sons", 1995, authors5.add(), authors5.size());
-		Book book6 = new Book("Airplane", "Rock Roll", 2010, authors6.add(), authors6.size());
+		Book book1 = new Book("Data Structures With Java", "Seth Rogen", 2002, authors1.toArray(new String[0]), authors1.size());
+		Book book2 = new Book("American History", "McGraw Hill", 2005, authors2.toArray(new String[0]), authors2.size());
+		Book book3 = new Book("Vampire Slayer", "Seth Rogen", 2013, authors3.toArray(new String[0]), authors3.size());
+		Book book4 = new Book("Ford", "Penguin", 1999, authors4.toArray(new String[0] ), authors4.size()) ;
+		Book book5 = new Book("Stick", "Trolli and Sons", 1995, authors5.toArray(new String[0]), authors5.size());
+		Book book6 = new Book("Airplane", "Rock Roll", 2010, authors6.toArray(new String[0]), authors6.size());
 
+		//adding books to database
 		BookDatabase database = new BookDatabase();
 		System.out.print("Adding books to database");
 		System.out.print("\n");
@@ -51,7 +52,8 @@ public class Driver {
 
 		System.out.print("Comparing books alphabetically");
 		System.out.print("\n");
-		if (book1 < book2) {
+		int compare = book1.compareTo(book2);
+		if (compare < 0) {
 			System.out.print(book1.getTitle());
 			System.out.print(" comes before ");
 			System.out.print(book2.getTitle());
